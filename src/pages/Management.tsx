@@ -1,31 +1,67 @@
 
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
 export default function Management() {
   const management = [
     {
-      name: "Dr. Rajesh Kumar Sharma",
-      position: "Chairman",
-      education: "Ph.D. in Education, M.A. in Psychology",
-      experience: "25+ years in educational leadership",
+      name: "Mr. Dharmendra Tomar",
+      position: "Managing Director",
+      education: "M.A., B.Ed., Educational Leadership",
+      experience: "25+ years in educational administration",
       message: "Education is the foundation of a progressive society. At CIA, we nurture minds to build tomorrow's leaders.",
       image: "/lovable-uploads/07149658-af3e-4508-a526-0f4b3afe2e5e.png"
     },
     {
-      name: "Mrs. Sunita Verma",
-      position: "Principal",
-      education: "M.Ed., B.Ed., M.A. in English",
+      name: "Mr. Lavish Tomar",
+      position: "Director",
+      education: "M.Ed., B.Ed., Management Studies",
       experience: "20+ years in academic administration",
       message: "Every child is unique and has unlimited potential. Our role is to discover and nurture that potential.",
+      image: "/lovable-uploads/b8f3ac02-f970-4c9d-b9e7-0b02d8143813.png"
+    },
+    {
+      name: "Mrs. Neha Pundir",
+      position: "Principal",
+      education: "M.Ed., B.Ed., M.A. in Education",
+      experience: "18+ years in school administration",
+      message: "Quality education with moral values is our commitment to every student and parent.",
       image: "/lovable-uploads/b8f3ac02-f970-4c9d-b9e7-0b02d8143813.png"
     }
   ];
 
-  const staff = [
-    { department: "Mathematics", teachers: 8, head: "Dr. Amit Singh" },
-    { department: "Science", teachers: 12, head: "Mrs. Priya Gupta" },
-    { department: "English", teachers: 6, head: "Mr. Rohit Sharma" },
-    { department: "Social Studies", teachers: 5, head: "Mrs. Neha Verma" },
-    { department: "Computer Science", teachers: 4, head: "Mr. Vikash Kumar" },
-    { department: "Physical Education", teachers: 3, head: "Coach Rajesh" }
+  const staffData = [
+    { srNo: 1, name: "Mr. Dharmendra Tomar", fatherName: "Mr. Mangpal Singh", designation: "Managing Director" },
+    { srNo: 2, name: "Mr. Lavish Tomar", fatherName: "Mr. Dharmendra Tomar", designation: "Director" },
+    { srNo: 3, name: "Mrs. Savita Choudhary", fatherName: "Mr. Dharmendra Tomar", designation: "Manager" },
+    { srNo: 4, name: "Mrs. Neha Pundir", fatherName: "", designation: "Principal" },
+    { srNo: 5, name: "Mrs. Hemlata", fatherName: "Mr. Rajendra Prashad", designation: "Vice Principal" },
+    { srNo: 6, name: "Mr. Mayank Singh Pundir", fatherName: "Mr. Rajesh Kumar", designation: "Admin Head" },
+    { srNo: 7, name: "Mr. Vikas Kumar", fatherName: "Mr. Pappu Singh", designation: "(PT) TGT" },
+    { srNo: 8, name: "Mrs. Parol Kapoor", fatherName: "Mr. Sudheer Kapoor", designation: "PRT" },
+    { srNo: 9, name: "Mrs. Reena", fatherName: "Mr. Praveen Kumar Saini", designation: "PRT" },
+    { srNo: 10, name: "Mrs. Nirmal", fatherName: "Mr. Subhash Chander", designation: "PRT" },
+    { srNo: 11, name: "Mrs. Manju Tyagi", fatherName: "Mr. Mohit Tyagi", designation: "PRT" },
+    { srNo: 12, name: "Km. Pinki Rani", fatherName: "Late Kurdi", designation: "TGT" },
+    { srNo: 13, name: "Miss. Saloni Saini", fatherName: "Late Jitendra Kumar", designation: "TGT" },
+    { srNo: 14, name: "Miss. Deepika Kapil", fatherName: "Mr. Arun Kapil", designation: "TGT" },
+    { srNo: 15, name: "Miss. Vidhi Jain", fatherName: "Mr. Ramesh Kumar Jain", designation: "TGT" },
+    { srNo: 16, name: "Mr. Shwetank Sharma", fatherName: "Mr. Kamlesh Sharma", designation: "TGT" }
+  ];
+
+  const departments = [
+    { department: "Mathematics", teachers: 3, head: "Mr. Vikas Kumar" },
+    { department: "Science", teachers: 4, head: "Mrs. Deepika Kapil" },
+    { department: "English", teachers: 3, head: "Miss. Saloni Saini" },
+    { department: "Social Studies", teachers: 2, head: "Mr. Shwetank Sharma" },
+    { department: "Primary Section", teachers: 4, head: "Mrs. Hemlata (Vice Principal)" },
+    { department: "Administration", teachers: 3, head: "Mr. Mayank Singh Pundir" }
   ];
 
   return (
@@ -77,14 +113,50 @@ export default function Management() {
         </div>
       </div>
 
-      {/* Faculty Departments */}
+      {/* Official Staff Data Table */}
       <div className="bg-white py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-16">Official Staff Data</h2>
+          
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-blue-600 text-white p-4">
+              <h3 className="text-xl font-bold text-center">Chanakya International Academy</h3>
+              <p className="text-center text-blue-100">Delhi Road, Rampur Maniharan, Saharanpur (247451)</p>
+              <p className="text-center text-blue-100 font-semibold">School Staff Data</p>
+            </div>
+            
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="text-center font-bold">S. No.</TableHead>
+                  <TableHead className="text-center font-bold">Staff Name</TableHead>
+                  <TableHead className="text-center font-bold">Father/Husband Name</TableHead>
+                  <TableHead className="text-center font-bold">Designation</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {staffData.map((staff) => (
+                  <TableRow key={staff.srNo}>
+                    <TableCell className="text-center">{staff.srNo}</TableCell>
+                    <TableCell className="text-center">{staff.name}</TableCell>
+                    <TableCell className="text-center">{staff.fatherName}</TableCell>
+                    <TableCell className="text-center font-semibold">{staff.designation}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </div>
+
+      {/* Faculty Departments */}
+      <div className="bg-gray-50 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-16">Faculty Departments</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {staff.map((dept, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg shadow-lg p-6 hover-scale">
+            {departments.map((dept, index) => (
+              <div key={index} className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{dept.department}</h3>
                 <div className="space-y-2">
                   <p className="text-gray-700"><strong>Department Head:</strong> {dept.head}</p>

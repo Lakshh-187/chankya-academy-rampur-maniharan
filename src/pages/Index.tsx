@@ -8,6 +8,7 @@ import { UncifSection } from "@/components/home/UncifSection";
 import { ImageGallery } from "@/components/home/ImageGallery";
 import { VideoSection } from "@/components/home/VideoSection";
 import { NewsSection } from "@/components/home/NewsSection";
+import { CertificateSection } from "@/components/home/CertificateSection";
 import { ChatBot } from "@/components/ChatBot";
 
 const Index = () => {
@@ -22,6 +23,7 @@ const Index = () => {
       <ImageGallery />
       <VideoSection />
       <NewsSection />
+      <CertificateSection />
       <ChatBot />
     </div>
   );

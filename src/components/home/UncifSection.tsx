@@ -15,7 +15,7 @@ export const UncifSection = () => {
           </h2>
           <p className="text-lg lg:text-xl text-blue-100 max-w-3xl mx-auto mb-8">
             Empowering students with internationally recognized certifications through 
-            the United Nations Children's International Foundation programs
+            the Uniford National Council Of Institutes & Frontliners programs
           </p>
         </div>
 
@@ -29,7 +29,7 @@ export const UncifSection = () => {
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
             <Award className="w-12 h-12 text-green-300 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">Certified Excellence</h3>
-            <p className="text-blue-100">UN-backed certification for quality education</p>
+            <p className="text-blue-100">UNCIF-backed certification for quality education</p>
           </div>
           
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
