@@ -1,0 +1,106 @@
+
+import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Menu, X, Phone } from "lucide-react";
+
+export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const navigation = [
+    { name: "Home", href: "/" },
+    { name: "Facilities", href: "/facilities" },
+    { name: "CIA Official", href: "/cia-official" },
+    { name: "Establishments", href: "/establishments" },
+    { name: "Management", href: "/management" },
+    { name: "Gallery", href: "/gallery" },
+    { name: "Store", href: "/store" },
+  ];
+
+  const isActive = (path: string) => location.pathname === path;
+
+  return (
+    <nav className="bg-white shadow-lg sticky top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-20">
+          <div className="flex items-center">
+            <Link to="/" className="flex items-center space-x-3">
+              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-xl">CIA</span>
+              </div>
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">Chanakya International Academy</h1>
+                <p className="text-sm text-gray-600">Rampur Maniharan</p>
+              </div>
+            </Link>
+          </div>
+
+          <div className="hidden lg:flex items-center space-x-8">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  isActive(item.href)
+                    ? "text-blue-600 bg-blue-50"
+                    : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            <Button 
+              className="bg-green-600 hover:bg-green-700 text-white"
+              onClick={() => window.open("https://wa.me/919876543210?text=Hello%20I%20want%20to%20know%20about%20admissions", "_blank")}
+            >
+              <Phone className="mr-2 h-4 w-4" />
+              Admission Open
+            </Button>
+          </div>
+
+          <div className="lg:hidden flex items-center">
+            <Button
+              variant="ghost"
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </Button>
+          </div>
+        </div>
+
+        {isOpen && (
+          <div className="lg:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`block px-3 py-2 rounded-md text-base font-medium ${
+                    isActive(item.href)
+                      ? "text-blue-600 bg-blue-50"
+                      : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Button 
+                className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white"
+                onClick={() => {
+                  window.open("https://wa.me/919876543210?text=Hello%20I%20want%20to%20know%20about%20admissions", "_blank");
+                  setIsOpen(false);
+                }}
+              >
+                <Phone className="mr-2 h-4 w-4" />
+                Admission Open
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
+  );
+};
