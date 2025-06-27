@@ -35,8 +35,8 @@ export const Navbar = () => {
                 </div>
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gray-900 leading-tight">Chanakya International Academy</h1>
-                <p className="text-sm text-blue-600 font-medium">Rampur Maniharan</p>
+                <h1 className="text-xl font-bold text-gray-900 leading-tight">Chanakya</h1>
+                <p className="text-sm text-blue-600 font-medium">International Academy</p>
               </div>
             </Link>
           </div>
