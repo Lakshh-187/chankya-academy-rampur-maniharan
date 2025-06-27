@@ -1,10 +1,82 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpen, Zap, Clock } from "lucide-react";
+import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpen, Zap, Clock, Calendar, Droplets, MapPin, FileImage, UserCheck } from "lucide-react";
 
 export default function MandatoryDisclosure() {
   const documents = [
+    {
+      title: "Academic Calendar",
+      description: "Complete Academic Year 2024-25 Calendar & Schedule",
+      icon: Calendar,
+      size: "1.2 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/16euP6woUyMSDWs14tIh3NlNk7mq8vBID/view?usp=sharing"
+    },
+    {
+      title: "Safe Drinking Water & Sanitary Certificate",
+      description: "Water Quality & Sanitation Approval Certificate",
+      icon: Droplets,
+      size: "1.5 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1C71owHSvgi_B16yhg9YFOgWWu4Ewa5NN/view?usp=sharing"
+    },
+    {
+      title: "Building Safety Certificate",
+      description: "Structural Safety & Building Approval Certificate",
+      icon: Building,
+      size: "2.3 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1FtBV2UkslE5XVWJ9Bj2901vNvIioyxCL/view?usp=sharing"
+    },
+    {
+      title: "Certificate of Land",
+      description: "Land Ownership & Property Documentation",
+      icon: MapPin,
+      size: "1.8 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/12UiRBLtoN7i29-LuY05Sfk90-oOtsqB8/view?usp=sharing"
+    },
+    {
+      title: "Letter Head",
+      description: "Official School Letter Head Template",
+      icon: FileImage,
+      size: "856 KB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1dV5KqNl50-E1gN1sLLs31ZebXIBVQlB1/view?usp=sharing"
+    },
+    {
+      title: "Certificate of School Recognition",
+      description: "Official School Recognition Certificate",
+      icon: Award,
+      size: "1.9 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1XWYk4dE1CrOgscOrnDub4FKyqvVgll5i/view?usp=sharing"
+    },
+    {
+      title: "Board Member & Staff",
+      description: "Complete Board Members & Staff Details",
+      icon: UserCheck,
+      size: "2.1 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1BqCBGFkJZmqArNVaTwhTaHbFotSxYgNk/view?usp=sharing"
+    },
+    {
+      title: "Fire Safety Certificate",
+      description: "NOC from Fire Department - Valid till March 2025",
+      icon: Shield,
+      size: "1.5 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1yM7CA1qVm5q0lKMbPxpjkiFqk8eM_l68/view?usp=sharing"
+    },
+    {
+      title: "Fees Structure",
+      description: "Detailed Academic Year 2024-25 Fee Structure",
+      icon: DollarSign,
+      size: "1.3 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1v6mUH4gRFRaDmZ61G9-dzZ8u4q0FDvTQ/view?usp=sharing"
+    },
     {
       title: "Trust Registration Certificate",
       description: "Baba Akhand Bharat Trust Registration Document",
@@ -20,38 +92,10 @@ export default function MandatoryDisclosure() {
       type: "PDF"
     },
     {
-      title: "Fire Safety Certificate",
-      description: "NOC from Fire Department - Valid till March 2025",
-      icon: Shield,
-      size: "1.5 MB",
-      type: "PDF"
-    },
-    {
-      title: "Building Safety Certificate",
-      description: "Structural Safety & Building Approval Certificate",
-      icon: Building,
-      size: "2.3 MB",
-      type: "PDF"
-    },
-    {
       title: "Pollution Control Board NOC",
       description: "Environmental Clearance Certificate",
       icon: Zap,
       size: "1.2 MB",
-      type: "PDF"
-    },
-    {
-      title: "Health Department NOC",
-      description: "Health & Sanitation Approval Certificate",
-      icon: Shield,
-      size: "1.7 MB",
-      type: "PDF"
-    },
-    {
-      title: "Fee Structure Document",
-      description: "Detailed Academic Year 2024-25 Fee Structure",
-      icon: DollarSign,
-      size: "856 KB",
       type: "PDF"
     },
     {
@@ -74,47 +118,15 @@ export default function MandatoryDisclosure() {
       icon: Building,
       size: "2.8 MB",
       type: "PDF"
-    },
-    {
-      title: "Safety & Security Protocol",
-      description: "Student Safety Measures & Emergency Procedures",
-      icon: Shield,
-      size: "1.4 MB",
-      type: "PDF"
-    },
-    {
-      title: "Transportation Policy",
-      description: "School Bus Safety & Transportation Guidelines",
-      icon: Clock,
-      size: "1.1 MB",
-      type: "PDF"
-    },
-    {
-      title: "Admission Policy",
-      description: "Complete Admission Guidelines & Procedures",
-      icon: FileText,
-      size: "1.6 MB",
-      type: "PDF"
-    },
-    {
-      title: "Annual Financial Report",
-      description: "Audited Financial Statements 2023-24",
-      icon: DollarSign,
-      size: "2.4 MB",
-      type: "PDF"
-    },
-    {
-      title: "School Management Committee",
-      description: "SMC Constitution & Member Details",
-      icon: Users,
-      size: "1.3 MB",
-      type: "PDF"
     }
   ];
 
-  const handleDownload = (docTitle: string) => {
-    // Placeholder for actual download functionality
-    console.log(`Downloading: ${docTitle}`);
+  const handleDownload = (docTitle: string, url?: string) => {
+    if (url) {
+      window.open(url, '_blank');
+    } else {
+      console.log(`Downloading: ${docTitle}`);
+    }
   };
 
   return (
@@ -182,11 +194,11 @@ export default function MandatoryDisclosure() {
                     {doc.description}
                   </p>
                   <Button 
-                    onClick={() => handleDownload(doc.title)}
+                    onClick={() => handleDownload(doc.title, doc.url)}
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium"
                   >
                     <Download className="mr-2 h-4 w-4" />
-                    Download Document
+                    {doc.url ? 'Download Document' : 'Coming Soon'}
                   </Button>
                 </CardContent>
               </Card>
