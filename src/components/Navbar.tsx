@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, FileText } from "lucide-react";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +36,7 @@ export const Navbar = () => {
             </Link>
           </div>
 
-          <div className="hidden lg:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -50,6 +50,17 @@ export const Navbar = () => {
                 {item.name}
               </Link>
             ))}
+            
+            <Link to="/mandatory-disclosure">
+              <Button 
+                variant="outline"
+                className="border-orange-500 text-orange-600 hover:bg-orange-50 font-semibold"
+              >
+                <FileText className="mr-2 h-4 w-4" />
+                Mandatory Disclosure
+              </Button>
+            </Link>
+            
             <Button 
               className="bg-green-600 hover:bg-green-700 text-white"
               onClick={() => window.open("https://wa.me/919876543210?text=Hello%20I%20want%20to%20know%20about%20admissions", "_blank")}
@@ -87,6 +98,17 @@ export const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
+              
+              <Link to="/mandatory-disclosure" onClick={() => setIsOpen(false)}>
+                <Button 
+                  variant="outline"
+                  className="w-full mt-2 border-orange-500 text-orange-600 hover:bg-orange-50 font-semibold"
+                >
+                  <FileText className="mr-2 h-4 w-4" />
+                  Mandatory Disclosure
+                </Button>
+              </Link>
+              
               <Button 
                 className="w-full mt-4 bg-green-600 hover:bg-green-700 text-white"
                 onClick={() => {
