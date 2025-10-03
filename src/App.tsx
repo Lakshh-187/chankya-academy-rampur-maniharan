@@ -15,6 +15,7 @@ import Management from "./pages/Management";
 import Gallery from "./pages/Gallery";
 import Store from "./pages/Store";
 import MandatoryDisclosure from "./pages/MandatoryDisclosure";
+import Policies from "./pages/Policies";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +39,7 @@ const App = () => (
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/store" element={<Store />} />
               <Route path="/mandatory-disclosure" element={<MandatoryDisclosure />} />
+              <Route path="/policies" element={<Policies />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
