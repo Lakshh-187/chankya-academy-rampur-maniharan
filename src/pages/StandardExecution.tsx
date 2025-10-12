@@ -10,6 +10,8 @@ import {
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { CheckCircle2, Target, Users, FileText, TrendingUp, Award } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import bissBannerHero from "@/assets/biss-banner-hero.jpg";
+import bissUncifBanners from "@/assets/biss-uncif-banners.jpg";
 
 const StandardExecution = () => {
   const departments = [
@@ -88,17 +90,22 @@ const StandardExecution = () => {
       />
 
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Standard Policy Execution Framework
-              </h1>
-              <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-                Ensuring every policy, program, and initiative leads to real, measurable impact through an organized system of departments, committees, and structured reporting.
-              </p>
-            </div>
+        {/* Hero Section with Banner */}
+        <section className="relative">
+          <div className="w-full">
+            <img 
+              src={bissBannerHero} 
+              alt="BISS - 1 Million Safe & Standard School Initiative" 
+              className="w-full h-auto object-cover"
+            />
+          </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+              Standard Policy Execution Framework
+            </h1>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Ensuring every policy, program, and initiative leads to real, measurable impact through an organized system of departments, committees, and structured reporting.
+            </p>
           </div>
         </section>
 
@@ -560,6 +567,17 @@ const StandardExecution = () => {
               </div>
             </CardContent>
           </Card>
+        </section>
+
+        {/* Banner Section Above Footer */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="w-full">
+            <img 
+              src={bissUncifBanners} 
+              alt="BISS & UNCIF - Partnership Initiatives by Uniford Foundation" 
+              className="w-full h-auto object-cover rounded-lg shadow-lg"
+            />
+          </div>
         </section>
       </div>
     </>
