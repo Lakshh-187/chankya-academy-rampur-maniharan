@@ -2,7 +2,8 @@ import { SEO } from "@/components/SEO";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Shield, AlertTriangle, Phone, Mail } from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Shield, AlertTriangle, Phone, Mail, ShieldAlert, Heart } from "lucide-react";
 import ciaLogo from "@/assets/cia-logo.jpg";
 
 const Safety = () => {
@@ -30,8 +31,22 @@ const Safety = () => {
             </p>
           </div>
 
-          {/* POSH Policy Section */}
-          <section className="mb-16">
+          {/* Policy Tabs */}
+          <Tabs defaultValue="posh" className="w-full">
+            <TabsList className="grid w-full max-w-2xl mx-auto grid-cols-2 mb-8 h-auto">
+              <TabsTrigger value="posh" className="text-base py-4 data-[state=active]:bg-red-600 data-[state=active]:text-white">
+                <ShieldAlert className="w-5 h-5 mr-2" />
+                POSH Policy
+              </TabsTrigger>
+              <TabsTrigger value="child-safety" className="text-base py-4 data-[state=active]:bg-green-600 data-[state=active]:text-white">
+                <Heart className="w-5 h-5 mr-2" />
+                Child Safety Policy
+              </TabsTrigger>
+            </TabsList>
+
+            {/* POSH Policy Tab Content */}
+            <TabsContent value="posh">
+              <section className="mb-16">
             <Card className="border-2 border-blue-200 shadow-xl">
               {/* Letterhead */}
               <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8">
@@ -398,9 +413,11 @@ const Safety = () => {
               </CardContent>
             </Card>
           </section>
+            </TabsContent>
 
-          {/* Child Safety Policy Section */}
-          <section>
+            {/* Child Safety Policy Tab Content */}
+            <TabsContent value="child-safety">
+              <section>
             <Card className="border-2 border-green-200 shadow-xl">
               {/* Letterhead */}
               <div className="bg-gradient-to-r from-green-600 to-green-800 text-white p-8">
@@ -818,6 +835,8 @@ const Safety = () => {
               </CardContent>
             </Card>
           </section>
+            </TabsContent>
+          </Tabs>
 
         </div>
       </div>
