@@ -17,6 +17,7 @@ export const Navbar = () => {
     { name: "Gallery", href: "/gallery" },
     { name: "Policies", href: "/policies" },
     { name: "Standard Execution", href: "/standard-execution" },
+    { name: "Safety", href: "/safety" },
     { name: "Store", href: "/store" },
   ];
 
