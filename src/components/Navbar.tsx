@@ -11,9 +11,6 @@ export const Navbar = () => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Facilities", href: "/facilities" },
-    { name: "CIA Official", href: "/cia-official" },
-    { name: "Establishments", href: "/establishments" },
-    { name: "Management", href: "/management" },
     { name: "Gallery", href: "/gallery" },
     { name: "Policies", href: "/policies" },
     { name: "Standard Execution", href: "/standard-execution" },
@@ -90,7 +87,7 @@ export const Navbar = () => {
         </div>
 
         {isOpen && (
-          <div className="lg:hidden">
+          <div className="lg:hidden transition-all duration-200">
             <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t">
               {navigation.map((item) => (
                 <Link

@@ -38,11 +38,12 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4">About Us</h4>
             <ul className="space-y-2">
-              <li><Link to="/facilities" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Facilities</Link></li>
               <li><Link to="/cia-official" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">CIA Official</Link></li>
+              <li><Link to="/establishments" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Establishments</Link></li>
               <li><Link to="/management" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Management</Link></li>
+              <li><Link to="/facilities" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Facilities</Link></li>
               <li><Link to="/gallery" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Gallery</Link></li>
               <li><Link to="/mandatory-disclosure" className="text-gray-300 hover:text-white transition-colors text-sm lg:text-base">Mandatory Disclosure</Link></li>
             </ul>
