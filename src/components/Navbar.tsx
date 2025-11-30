@@ -2,7 +2,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Phone, FileText, GraduationCap } from "lucide-react";
+import { Menu, X, Phone, FileText } from "lucide-react";
+import ciaLogo from "@/assets/cia-logo.png";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,15 +26,8 @@ export const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center space-x-4">
-              <div className="relative">
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-800 rounded-xl shadow-lg flex items-center justify-center transform rotate-3">
-                  <GraduationCap className="w-8 h-8 text-white" />
-                </div>
-                <div className="absolute -top-1 -right-1 w-6 h-6 bg-orange-500 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-xs">CIA</span>
-                </div>
-              </div>
+            <Link to="/" className="flex items-center space-x-3">
+              <img src={ciaLogo} alt="Chanakya International Academy Logo" className="h-16 w-16 object-contain" />
               <div>
                 <h1 className="text-xl font-bold text-gray-900 leading-tight">Chanakya</h1>
                 <p className="text-sm text-blue-600 font-medium">International Academy</p>

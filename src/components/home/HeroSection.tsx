@@ -39,7 +39,6 @@ export const HeroSection = () => {
   ];
 
   const schoolHighlights = [
-    { icon: BookOpen, text: "CBSE Affiliated", color: "text-blue-400" },
     { icon: Users, text: "500+ Students", color: "text-green-400" },
     { icon: Award, text: "25+ Years Excellence", color: "text-yellow-400" },
     { icon: Globe, text: "International Standards", color: "text-purple-400" }
@@ -61,11 +60,6 @@ export const HeroSection = () => {
             {/* Left Side - School Details */}
             <div className="space-y-8 animate-fade-in">
               <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium">
-                  <Award className="w-4 h-4 mr-2 text-yellow-400" />
-                  CBSE Affiliated School
-                </div>
-                
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Chanakya
                   <span className="block text-orange-400">International</span>
@@ -84,7 +78,7 @@ export const HeroSection = () => {
               </div>
 
               {/* School Highlights */}
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-3 gap-4">
                 {schoolHighlights.map((highlight, index) => (
                   <div key={index} className="flex items-center space-x-3 p-4 bg-white/10 backdrop-blur-sm rounded-xl border border-white/20">
                     <highlight.icon className={`w-6 h-6 ${highlight.color}`} />
