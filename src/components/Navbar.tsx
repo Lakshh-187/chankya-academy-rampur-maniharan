@@ -16,7 +16,6 @@ export const Navbar = () => {
     { name: "Policies", href: "/policies" },
     { name: "Standard Execution", href: "/standard-execution" },
     { name: "Safety", href: "/safety" },
-    { name: "Store", href: "/store" },
   ];
 
   const isActive = (path: string) => location.pathname === path;
