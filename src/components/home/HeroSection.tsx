@@ -39,9 +39,9 @@ export const HeroSection = () => {
   ];
 
   const schoolHighlights = [
-    { icon: Users, text: "500+ Students", color: "text-green-400" },
-    { icon: Award, text: "25+ Years Excellence", color: "text-yellow-400" },
-    { icon: Globe, text: "International Standards", color: "text-purple-400" }
+    { icon: Users, text: "300+ Students", color: "text-green-400" },
+    { icon: Award, text: "Solar Powered", color: "text-yellow-400" },
+    { icon: Globe, text: "AC Classes", color: "text-purple-400" }
   ];
 
   return (
@@ -142,16 +142,16 @@ export const HeroSection = () => {
                 <div className="absolute -bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl border border-white/20">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <div className="text-2xl font-bold text-blue-900">25+</div>
-                      <div className="text-sm text-gray-600">Years</div>
+                      <div className="text-2xl font-bold text-blue-900">2023</div>
+                      <div className="text-sm text-gray-600">Established</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-blue-900">500+</div>
+                      <div className="text-2xl font-bold text-blue-900">300+</div>
                       <div className="text-sm text-gray-600">Students</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-blue-900">95%</div>
-                      <div className="text-sm text-gray-600">Success</div>
+                      <div className="text-2xl font-bold text-blue-900">20+</div>
+                      <div className="text-sm text-gray-600">Staff</div>
                     </div>
                   </div>
                 </div>
