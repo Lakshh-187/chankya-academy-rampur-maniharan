@@ -22,20 +22,28 @@ export const InstitutesCluster = () => {
             
             <div className="grid grid-cols-2 gap-6">
               <div className="text-center p-4">
-                <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
-                <div className="text-gray-600">Happy Students</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">2023</div>
+                <div className="text-gray-600">Established</div>
               </div>
               <div className="text-center p-4">
-                <div className="text-3xl font-bold text-green-600 mb-2">50+</div>
-                <div className="text-gray-600">Expert Faculty</div>
+                <div className="text-3xl font-bold text-green-600 mb-2">300+</div>
+                <div className="text-gray-600">Students</div>
               </div>
               <div className="text-center p-4">
-                <div className="text-3xl font-bold text-purple-600 mb-2">15+</div>
-                <div className="text-gray-600">Years Legacy</div>
+                <div className="text-3xl font-bold text-purple-600 mb-2">20+</div>
+                <div className="text-gray-600">Staff</div>
               </div>
               <div className="text-center p-4">
                 <div className="text-3xl font-bold text-orange-600 mb-2">100%</div>
-                <div className="text-gray-600">Results</div>
+                <div className="text-gray-600">Solar Powered</div>
+              </div>
+              <div className="text-center p-4">
+                <div className="text-3xl font-bold text-blue-600 mb-2">✓</div>
+                <div className="text-gray-600">AC Classes</div>
+              </div>
+              <div className="text-center p-4">
+                <div className="text-3xl font-bold text-green-600 mb-2">✓</div>
+                <div className="text-gray-600">Smart Panels</div>
               </div>
             </div>
           </div>
