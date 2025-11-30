@@ -15,16 +15,16 @@ export const TrustSection = () => {
             </p>
             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-orange-600">2020</div>
+                <div className="text-2xl font-bold text-orange-600">2023</div>
                 <div className="text-gray-600">Established</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-orange-600">500+</div>
+                <div className="text-2xl font-bold text-orange-600">300+</div>
                 <div className="text-gray-600">Students</div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-orange-600">50+</div>
-                <div className="text-gray-600">Faculty Members</div>
+                <div className="text-2xl font-bold text-orange-600">20+</div>
+                <div className="text-gray-600">Staff Members</div>
               </div>
             </div>
           </div>
