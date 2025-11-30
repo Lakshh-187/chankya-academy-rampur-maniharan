@@ -6,6 +6,24 @@ import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpe
 export default function MandatoryDisclosure() {
   const documents = [
     {
+      title: "Trust Registration Details",
+      description: "Official Trust Registration Certificate & Complete Details",
+      icon: Shield,
+      size: "2.5 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1Rb8MmhQM9iwHQTrsmU1LddJkhxM-kvje/view?usp=sharing",
+      highlight: true
+    },
+    {
+      title: "Mandatory Public Disclosure",
+      description: "CBSE Mandatory Public Disclosure - Complete Information",
+      icon: FileText,
+      size: "1.8 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1lIU92tfhp3Uv9_Q-AYnyvYQxHodM2CSb/view?usp=sharing",
+      highlight: true
+    },
+    {
       title: "Academic Calendar",
       description: "Complete Academic Year 2024-25 Calendar & Schedule",
       icon: Calendar,
@@ -169,19 +187,28 @@ export default function MandatoryDisclosure() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {documents.map((doc, index) => {
             const IconComponent = doc.icon;
+            const isHighlighted = doc.highlight;
             return (
-              <Card key={index} className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
+              <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 border-0 shadow-md ${
+                isHighlighted ? 'bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300' : ''
+              }`}>
                 <CardHeader className="pb-4">
                   <div className="flex items-start space-x-3">
-                    <div className="p-2 bg-blue-100 rounded-lg">
-                      <IconComponent className="h-6 w-6 text-blue-600" />
+                    <div className={`p-2 rounded-lg ${
+                      isHighlighted ? 'bg-red-100' : 'bg-blue-100'
+                    }`}>
+                      <IconComponent className={`h-6 w-6 ${
+                        isHighlighted ? 'text-red-600' : 'text-blue-600'
+                      }`} />
                     </div>
                     <div className="flex-1">
                       <CardTitle className="text-lg font-semibold text-gray-900 leading-tight">
                         {doc.title}
                       </CardTitle>
                       <div className="flex items-center space-x-2 mt-2">
-                        <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded font-medium">
+                        <span className={`px-2 py-1 text-xs rounded font-medium ${
+                          isHighlighted ? 'bg-red-200 text-red-800' : 'bg-gray-100 text-gray-600'
+                        }`}>
                           {doc.type}
                         </span>
                         <span className="text-sm text-gray-500">{doc.size}</span>
@@ -195,7 +222,11 @@ export default function MandatoryDisclosure() {
                   </p>
                   <Button 
                     onClick={() => handleDownload(doc.title, doc.url)}
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium"
+                    className={`w-full font-medium ${
+                      isHighlighted 
+                        ? 'bg-red-600 hover:bg-red-700 text-white' 
+                        : 'bg-blue-600 hover:bg-blue-700 text-white'
+                    }`}
                   >
                     <Download className="mr-2 h-4 w-4" />
                     {doc.url ? 'Download Document' : 'Coming Soon'}
