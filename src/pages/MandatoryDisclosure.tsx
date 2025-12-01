@@ -78,7 +78,8 @@ export default function MandatoryDisclosure() {
       icon: UserCheck,
       size: "2.1 MB",
       type: "PDF",
-      url: "https://drive.google.com/file/d/1BqCBGFkJZmqArNVaTwhTaHbFotSxYgNk/view?usp=sharing"
+      url: "https://drive.google.com/file/d/1KaMYF4AishcOXzB2V3wqZmbjzC1C51Wy/view?usp=sharing",
+      highlightPurple: true
     },
     {
       title: "Fire Safety Certificate",
@@ -190,19 +191,22 @@ export default function MandatoryDisclosure() {
             const IconComponent = doc.icon;
             const isHighlighted = doc.highlight;
             const isYellowHighlight = doc.highlightYellow;
+            const isPurpleHighlight = doc.highlightPurple;
             return (
               <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 border-0 shadow-md ${
                 isHighlighted ? 'bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300' : ''
               } ${
                 isYellowHighlight ? 'bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-400' : ''
+              } ${
+                isPurpleHighlight ? 'bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-purple-400' : ''
               }`}>
                 <CardHeader className="pb-4">
                   <div className="flex items-start space-x-3">
                     <div className={`p-2 rounded-lg ${
-                      isHighlighted ? 'bg-red-100' : isYellowHighlight ? 'bg-yellow-100' : 'bg-blue-100'
+                      isHighlighted ? 'bg-red-100' : isYellowHighlight ? 'bg-yellow-100' : isPurpleHighlight ? 'bg-purple-100' : 'bg-blue-100'
                     }`}>
                       <IconComponent className={`h-6 w-6 ${
-                        isHighlighted ? 'text-red-600' : isYellowHighlight ? 'text-yellow-600' : 'text-blue-600'
+                        isHighlighted ? 'text-red-600' : isYellowHighlight ? 'text-yellow-600' : isPurpleHighlight ? 'text-purple-600' : 'text-blue-600'
                       }`} />
                     </div>
                     <div className="flex-1">
@@ -211,7 +215,7 @@ export default function MandatoryDisclosure() {
                       </CardTitle>
                       <div className="flex items-center space-x-2 mt-2">
                         <span className={`px-2 py-1 text-xs rounded font-medium ${
-                          isHighlighted ? 'bg-red-200 text-red-800' : isYellowHighlight ? 'bg-yellow-200 text-yellow-800' : 'bg-gray-100 text-gray-600'
+                          isHighlighted ? 'bg-red-200 text-red-800' : isYellowHighlight ? 'bg-yellow-200 text-yellow-800' : isPurpleHighlight ? 'bg-purple-200 text-purple-800' : 'bg-gray-100 text-gray-600'
                         }`}>
                           {doc.type}
                         </span>
@@ -231,6 +235,8 @@ export default function MandatoryDisclosure() {
                         ? 'bg-red-600 hover:bg-red-700 text-white' 
                         : isYellowHighlight
                         ? 'bg-yellow-600 hover:bg-yellow-700 text-white'
+                        : isPurpleHighlight
+                        ? 'bg-purple-600 hover:bg-purple-700 text-white'
                         : 'bg-blue-600 hover:bg-blue-700 text-white'
                     }`}
                   >
