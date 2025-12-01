@@ -69,7 +69,8 @@ export default function MandatoryDisclosure() {
       icon: Award,
       size: "1.9 MB",
       type: "PDF",
-      url: "https://drive.google.com/file/d/1XWYk4dE1CrOgscOrnDub4FKyqvVgll5i/view?usp=sharing"
+      url: "https://drive.google.com/file/d/1zHG_7NnGFVa_KTQKYbN6PwaNy2cTEHf7/view?usp=sharing",
+      highlightYellow: true
     },
     {
       title: "Board Member & Staff",
@@ -188,17 +189,20 @@ export default function MandatoryDisclosure() {
           {documents.map((doc, index) => {
             const IconComponent = doc.icon;
             const isHighlighted = doc.highlight;
+            const isYellowHighlight = doc.highlightYellow;
             return (
               <Card key={index} className={`hover:shadow-lg transition-shadow duration-300 border-0 shadow-md ${
                 isHighlighted ? 'bg-gradient-to-br from-red-50 to-red-100 border-2 border-red-300' : ''
+              } ${
+                isYellowHighlight ? 'bg-gradient-to-br from-yellow-50 to-yellow-100 border-2 border-yellow-400' : ''
               }`}>
                 <CardHeader className="pb-4">
                   <div className="flex items-start space-x-3">
                     <div className={`p-2 rounded-lg ${
-                      isHighlighted ? 'bg-red-100' : 'bg-blue-100'
+                      isHighlighted ? 'bg-red-100' : isYellowHighlight ? 'bg-yellow-100' : 'bg-blue-100'
                     }`}>
                       <IconComponent className={`h-6 w-6 ${
-                        isHighlighted ? 'text-red-600' : 'text-blue-600'
+                        isHighlighted ? 'text-red-600' : isYellowHighlight ? 'text-yellow-600' : 'text-blue-600'
                       }`} />
                     </div>
                     <div className="flex-1">
@@ -207,7 +211,7 @@ export default function MandatoryDisclosure() {
                       </CardTitle>
                       <div className="flex items-center space-x-2 mt-2">
                         <span className={`px-2 py-1 text-xs rounded font-medium ${
-                          isHighlighted ? 'bg-red-200 text-red-800' : 'bg-gray-100 text-gray-600'
+                          isHighlighted ? 'bg-red-200 text-red-800' : isYellowHighlight ? 'bg-yellow-200 text-yellow-800' : 'bg-gray-100 text-gray-600'
                         }`}>
                           {doc.type}
                         </span>
@@ -225,6 +229,8 @@ export default function MandatoryDisclosure() {
                     className={`w-full font-medium ${
                       isHighlighted 
                         ? 'bg-red-600 hover:bg-red-700 text-white' 
+                        : isYellowHighlight
+                        ? 'bg-yellow-600 hover:bg-yellow-700 text-white'
                         : 'bg-blue-600 hover:bg-blue-700 text-white'
                     }`}
                   >
