@@ -11,6 +11,7 @@ import { VideoSection } from "@/components/home/VideoSection";
 import { NewsSection } from "@/components/home/NewsSection";
 import { CertificateSection } from "@/components/home/CertificateSection";
 import { ChatBot } from "@/components/ChatBot";
+import { FloatingCoursesButton } from "@/components/FloatingCoursesButton";
 import { SEO } from "@/components/SEO";
 
 const Index = () => {
@@ -36,6 +37,7 @@ const Index = () => {
         <NewsSection />
         <CertificateSection />
         <ChatBot />
+        <FloatingCoursesButton />
       </div>
     </>
   );
