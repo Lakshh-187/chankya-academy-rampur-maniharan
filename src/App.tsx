@@ -18,6 +18,7 @@ import MandatoryDisclosure from "./pages/MandatoryDisclosure";
 import Policies from "./pages/Policies";
 import StandardExecution from "./pages/StandardExecution";
 import Safety from "./pages/Safety";
+import Courses from "./pages/Courses";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
               <Route path="/policies" element={<Policies />} />
             <Route path="/standard-execution" element={<StandardExecution />} />
             <Route path="/safety" element={<Safety />} />
+            <Route path="/courses" element={<Courses />} />
             <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

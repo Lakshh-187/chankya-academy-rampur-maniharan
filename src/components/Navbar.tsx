@@ -12,6 +12,7 @@ export const Navbar = () => {
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Facilities", href: "/facilities" },
+    { name: "Courses", href: "/courses" },
     { name: "Gallery", href: "/gallery" },
     { name: "Policies", href: "/policies" },
     { name: "Standard Execution", href: "/standard-execution" },
