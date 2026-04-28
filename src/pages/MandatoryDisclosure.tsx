@@ -113,7 +113,7 @@ export default function MandatoryDisclosure() {
       icon: DollarSign,
       size: "1.3 MB",
       type: "PDF",
-      url: "https://drive.google.com/file/d/1v6mUH4gRFRaDmZ61G9-dzZ8u4q0FDvTQ/view?usp=sharing"
+      url: "https://drive.google.com/file/d/1h0XNKI-YKAfHlkdaDezgDGbKAv0THPn8/view?usp=sharing"
     },
     {
       title: "Trust Registration Certificate",
