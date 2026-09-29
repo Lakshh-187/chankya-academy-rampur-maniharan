@@ -82,12 +82,31 @@ export default function MandatoryDisclosure() {
       highlightPurple: true
     },
     {
-      title: "Fire Safety Certificate",
-      description: "NOC from Fire Department - Valid till March 2025",
+      title: "Fire Safety Certificate (New Fire NOC)",
+      description: "Latest NOC from Fire Department",
       icon: Shield,
       size: "1.5 MB",
       type: "PDF",
-      url: "https://drive.google.com/file/d/1yM7CA1qVm5q0lKMbPxpjkiFqk8eM_l68/view?usp=sharing"
+      url: "https://drive.google.com/file/d/13xLN7zBbAFqcVTguYWj6aXZrtkq01FHt/view?usp=sharing",
+      highlight: true
+    },
+    {
+      title: "SARAS Affiliation",
+      description: "CBSE SARAS Affiliation Details",
+      icon: Award,
+      size: "1.4 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1N808VA7ZxW3pZQv8pFY8c3oKV15cg6Og/view?usp=sharing",
+      highlightYellow: true
+    },
+    {
+      title: "Parent Teacher Association",
+      description: "PTA Members & Details",
+      icon: Users,
+      size: "1.2 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1smmN78G2yK6wLdtuX7Cs7fJu73ccjv7f/view?usp=sharing",
+      highlightPurple: true
     },
     {
       title: "Board Member & School Management Committee",
@@ -109,11 +128,30 @@ export default function MandatoryDisclosure() {
     },
     {
       title: "Fees Structure",
-      description: "Detailed Academic Year 2024-25 Fee Structure",
+      description: "Latest Academic Year Fee Structure",
       icon: DollarSign,
       size: "1.3 MB",
       type: "PDF",
-      url: "https://drive.google.com/file/d/1h0XNKI-YKAfHlkdaDezgDGbKAv0THPn8/view?usp=sharing"
+      url: "https://drive.google.com/file/d/1EsnjrH-kQmvcJVlEMTUVRmjQMs4od4OZ/view?usp=sharing",
+      highlight: true
+    },
+    {
+      title: "Biology Lab",
+      description: "Biology Laboratory Details & Equipment",
+      icon: FlaskConical,
+      size: "1.5 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1BlbCufN5J4MfCR9XZpw3cnIN02Hjrax-/view?usp=sharing",
+      section: "labs"
+    },
+    {
+      title: "Composite Lab",
+      description: "Composite Science Laboratory Details & Equipment",
+      icon: FlaskConical,
+      size: "1.5 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1azX8AsMGzRTQRy1-TP8EMiYs7Pma3CeE/view?usp=sharing",
+      section: "labs"
     },
     {
       title: "Trust Registration Certificate",
