@@ -1,10 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpen, Zap, Clock, Calendar, Droplets, MapPin, FileImage, UserCheck } from "lucide-react";
+import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpen, Zap, Clock, Calendar, Droplets, MapPin, FileImage, UserCheck, FlaskConical } from "lucide-react";
 
 export default function MandatoryDisclosure() {
-  const documents = [
+  const documents: any[] = [
     {
       title: "Trust Registration Details",
       description: "Official Trust Registration Certificate & Complete Details",
@@ -82,12 +82,31 @@ export default function MandatoryDisclosure() {
       highlightPurple: true
     },
     {
-      title: "Fire Safety Certificate",
-      description: "NOC from Fire Department - Valid till March 2025",
+      title: "Fire Safety Certificate (New Fire NOC)",
+      description: "Latest NOC from Fire Department",
       icon: Shield,
       size: "1.5 MB",
       type: "PDF",
-      url: "https://drive.google.com/file/d/1yM7CA1qVm5q0lKMbPxpjkiFqk8eM_l68/view?usp=sharing"
+      url: "https://drive.google.com/file/d/13xLN7zBbAFqcVTguYWj6aXZrtkq01FHt/view?usp=sharing",
+      highlight: true
+    },
+    {
+      title: "SARAS Affiliation",
+      description: "CBSE SARAS Affiliation Details",
+      icon: Award,
+      size: "1.4 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1N808VA7ZxW3pZQv8pFY8c3oKV15cg6Og/view?usp=sharing",
+      highlightYellow: true
+    },
+    {
+      title: "Parent Teacher Association",
+      description: "PTA Members & Details",
+      icon: Users,
+      size: "1.2 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1smmN78G2yK6wLdtuX7Cs7fJu73ccjv7f/view?usp=sharing",
+      highlightPurple: true
     },
     {
       title: "Board Member & School Management Committee",
@@ -109,11 +128,30 @@ export default function MandatoryDisclosure() {
     },
     {
       title: "Fees Structure",
-      description: "Detailed Academic Year 2024-25 Fee Structure",
+      description: "Latest Academic Year Fee Structure",
       icon: DollarSign,
       size: "1.3 MB",
       type: "PDF",
-      url: "https://drive.google.com/file/d/1h0XNKI-YKAfHlkdaDezgDGbKAv0THPn8/view?usp=sharing"
+      url: "https://drive.google.com/file/d/1EsnjrH-kQmvcJVlEMTUVRmjQMs4od4OZ/view?usp=sharing",
+      highlight: true
+    },
+    {
+      title: "Biology Lab",
+      description: "Biology Laboratory Details & Equipment",
+      icon: FlaskConical,
+      size: "1.5 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1BlbCufN5J4MfCR9XZpw3cnIN02Hjrax-/view?usp=sharing",
+      section: "labs"
+    },
+    {
+      title: "Composite Lab",
+      description: "Composite Science Laboratory Details & Equipment",
+      icon: FlaskConical,
+      size: "1.5 MB",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1azX8AsMGzRTQRy1-TP8EMiYs7Pma3CeE/view?usp=sharing",
+      section: "labs"
     },
     {
       title: "Trust Registration Certificate",
@@ -157,6 +195,15 @@ export default function MandatoryDisclosure() {
       size: "2.8 MB",
       type: "PDF"
     }
+  ];
+
+  const available = documents.filter(d => d.url && d.section !== "labs");
+  const labs = documents.filter(d => d.section === "labs");
+  const upcoming = documents.filter(d => !d.url);
+  const sections = [
+    { title: "Official Documents & Certificates", items: available },
+    { title: "Laboratories", items: labs },
+    { title: "Upcoming Documents", items: upcoming },
   ];
 
   const handleDownload = (docTitle: string, url?: string) => {
@@ -204,8 +251,11 @@ export default function MandatoryDisclosure() {
         </div>
 
         {/* Documents Grid */}
+        {sections.map((sec) => (
+        <section key={sec.title} className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 border-l-4 border-blue-600 pl-3">{sec.title}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {documents.map((doc, index) => {
+          {sec.items.map((doc, index) => {
             const IconComponent = doc.icon;
             const isHighlighted = doc.highlight;
             const isYellowHighlight = doc.highlightYellow;
@@ -271,6 +321,8 @@ export default function MandatoryDisclosure() {
             );
           })}
         </div>
+        </section>
+        ))}
 
         {/* Contact Information */}
         <div className="mt-12 bg-white rounded-lg shadow-lg p-8">
