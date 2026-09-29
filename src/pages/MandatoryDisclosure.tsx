@@ -1,10 +1,82 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpen, Zap, Clock, Calendar, Droplets, MapPin, FileImage, UserCheck, FlaskConical } from "lucide-react";
+import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpen, Zap, Clock, Calendar, Droplets, MapPin, FileImage, UserCheck, FlaskConical, Monitor, Calculator, Accessibility } from "lucide-react";
 
 export default function MandatoryDisclosure() {
   const documents: any[] = [
+    {
+      title: "Computer Lab",
+      description: "Computer Laboratory Details & Equipment",
+      icon: Monitor,
+      size: "PDF",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1Yn4ailOifYnqTT1u_QB-44Ym9rISGHlY/view?usp=sharing",
+      section: "labs"
+    },
+    {
+      title: "Library",
+      description: "School Library Details & Resources",
+      icon: BookOpen,
+      size: "PDF",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/12G04CZdzKljeKRiJaH3qrT8MDmPl-u2p/view?usp=sharing",
+      section: "labs"
+    },
+    {
+      title: "Maths Lab",
+      description: "Mathematics Laboratory Details",
+      icon: Calculator,
+      size: "PDF",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1XOcukl-o225u0LIO_aEuBBgqkwGMr3G0/view?usp=sharing",
+      section: "labs"
+    },
+    {
+      title: "Physics Lab",
+      description: "Physics Laboratory Details & Equipment",
+      icon: FlaskConical,
+      size: "PDF",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1xfPQ5ZV3yxMhZyEi7DXTuIwzSoJLLnJM/view?usp=sharing",
+      section: "labs"
+    },
+    {
+      title: "CWSN Boys Toilet",
+      description: "Toilet facility for Children With Special Needs",
+      icon: Accessibility,
+      size: "PDF",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/10CRUYB96P5Sq1dac5otC-RDq8sJaL8YL/view?usp=sharing",
+      section: "infra"
+    },
+    {
+      title: "Girls Toilet",
+      description: "Girls sanitation facility",
+      icon: Droplets,
+      size: "PDF",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1PjxDGfcG1zaoxkcnUCdOc_FU9qFADA_6/view?usp=sharing",
+      section: "infra"
+    },
+    {
+      title: "Water Filter",
+      description: "Safe drinking water filtration facility",
+      icon: Droplets,
+      size: "PDF",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1NSfDzVXfmYIgJBzBcWSLWIyYrJnFVviw/view?usp=sharing",
+      section: "infra"
+    },
+    {
+      title: "Boys Toilet",
+      description: "Boys sanitation facility",
+      icon: Droplets,
+      size: "PDF",
+      type: "PDF",
+      url: "https://drive.google.com/file/d/1AED0Z4FK-zBsEuGGu4Maa-8_pYqlSs8P/view?usp=sharing",
+      section: "infra"
+    },
     {
       title: "Trust Registration Details",
       description: "Official Trust Registration Certificate & Complete Details",
@@ -197,12 +269,14 @@ export default function MandatoryDisclosure() {
     }
   ];
 
-  const available = documents.filter(d => d.url && d.section !== "labs");
+  const available = documents.filter(d => d.url && !d.section);
   const labs = documents.filter(d => d.section === "labs");
+  const infra = documents.filter(d => d.section === "infra");
   const upcoming = documents.filter(d => !d.url);
   const sections = [
     { title: "Official Documents & Certificates", items: available },
     { title: "Laboratories", items: labs },
+    { title: "Infrastructure & Sanitation", items: infra },
     { title: "Upcoming Documents", items: upcoming },
   ];
 
