@@ -1,10 +1,10 @@
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpen, Zap, Clock, Calendar, Droplets, MapPin, FileImage, UserCheck } from "lucide-react";
+import { Download, FileText, Shield, Building, Users, DollarSign, Award, BookOpen, Zap, Clock, Calendar, Droplets, MapPin, FileImage, UserCheck, FlaskConical } from "lucide-react";
 
 export default function MandatoryDisclosure() {
-  const documents = [
+  const documents: any[] = [
     {
       title: "Trust Registration Details",
       description: "Official Trust Registration Certificate & Complete Details",
@@ -197,6 +197,15 @@ export default function MandatoryDisclosure() {
     }
   ];
 
+  const available = documents.filter(d => d.url && d.section !== "labs");
+  const labs = documents.filter(d => d.section === "labs");
+  const upcoming = documents.filter(d => !d.url);
+  const sections = [
+    { title: "Official Documents & Certificates", items: available },
+    { title: "Laboratories", items: labs },
+    { title: "Upcoming Documents", items: upcoming },
+  ];
+
   const handleDownload = (docTitle: string, url?: string) => {
     if (url) {
       window.open(url, '_blank');
@@ -242,8 +251,11 @@ export default function MandatoryDisclosure() {
         </div>
 
         {/* Documents Grid */}
+        {sections.map((sec) => (
+        <section key={sec.title} className="mb-12">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6 border-l-4 border-blue-600 pl-3">{sec.title}</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {documents.map((doc, index) => {
+          {sec.items.map((doc, index) => {
             const IconComponent = doc.icon;
             const isHighlighted = doc.highlight;
             const isYellowHighlight = doc.highlightYellow;
@@ -309,6 +321,8 @@ export default function MandatoryDisclosure() {
             );
           })}
         </div>
+        </section>
+        ))}
 
         {/* Contact Information */}
         <div className="mt-12 bg-white rounded-lg shadow-lg p-8">
